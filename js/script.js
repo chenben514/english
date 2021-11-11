@@ -97,6 +97,14 @@ function getQuestions() {
   let ansList = [];
   let tmpCnt = 0;
 
+  let tmpArr = [];
+  let k = 0;
+  for (let k = 0; k < quesCnt; k++) {
+    if (quesArr[k].length > 1) tmpArr.push(quesArr[k]);
+  }
+  quesArr = tmpArr;
+  quesCnt = quesArr.length;
+
   //1.get random list from file
   while (quesList.length < quesCnt) {
     var r = Math.floor(Math.random() * quesCnt);
